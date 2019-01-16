@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import dc from './DC_Comics_logo.png'
 import marvel from './marvel-logo.png'
 import './App.css';
@@ -7,8 +7,8 @@ import './App.css';
 function Images() {
   return (
     <div>
-      <img src={dc} alt="DC logo"/>
-      <img src={marvel} alt="Marvel logo"/>
+      <Link to="/dc-commics"><img src={dc} alt="DC logo"/></Link>
+      <Link to="/marvel-commics"><img src={marvel} alt="Marvel logo"/></Link>
     </div>
   )
 }
@@ -16,7 +16,15 @@ function Images() {
 function Dc() {
   return (
     <div>
-      <h1>Welcome to our page</h1>
+      <h2>Welcome to DC</h2>
+    </div>
+  )
+}
+
+function Marvel() {
+  return (
+    <div>
+      <h2>Welcome to Marvel</h2>
     </div>
   )
 }
@@ -29,6 +37,7 @@ class App extends Component {
           <h2>Welcome to the heroes app</h2>
           <Route exact path= "/" component={Images}/>
           <Route exact path= "/dc-commics" component={Dc}/>
+          <Route exact path= "/marvel-commics" component={Marvel}/>
         </div>
       </Router>
     );
