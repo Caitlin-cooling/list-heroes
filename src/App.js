@@ -27,8 +27,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <h2>Welcome to the heroes app</h2>
-          <Route path= "/" component={Images}/>
-          <Route path= "/dc-commics" component={Dc}/>
+          <Route exact path= "/" component={Images}/>
+          <Route exact path= "/dc-commics" component={Dc}/>
         </div>
       </Router>
     );
